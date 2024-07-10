@@ -1,8 +1,14 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
 import AddUser from "./addUser";
+import {useState } from "react";
+import DisplayUsers from "./components/DisplayUsers";
+
 
 export default function Home() {
+  let [users, setUsers] = useState([]);
+  
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -37,7 +43,21 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.grid}>
+      <div className={styles.grid} >
+        {/* <div className="notknown"> */}
+        {!!false ? <a
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Learn <span>-&gt;</span>
+          </h2>
+          <p>No users sorry</p>
+        </a> :
+        <DisplayUsers class={styles.card}/> 
+             }
         <AddUser name="test"/>
       </div>
     </main>

@@ -11,8 +11,6 @@ export default function AddUser(props) {
         <Button text={"addUser"}
         onClick={e=>addUser(e)}
         />
-      <h1>Current User ADMIN-:
-      </h1>
       </div>
   );
 
